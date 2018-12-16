@@ -1,7 +1,5 @@
 package pl.net.madejski;
 
-import sun.security.krb5.SCDynamicStoreConfig;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
@@ -134,7 +132,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         try {
             Statement stmt = connection.createStatement();
-            ResultSet resultSet = stmt.executeQuery("SELECT kraj, AVG(placa) AS placa FROM Pracownicy GROUP BY kraj ORDER BY placa;");
+            ResultSet resultSet = stmt.executeQuery("SELECT kraj, AVG(placa) AS placa FROM Pracownicy GROUP BY kraj ORDER BY placa DESC;");
 
             System.out.println("Country | Salary\n" +
                                "--------+-------");
